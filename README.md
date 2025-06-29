@@ -1,9 +1,6 @@
-**# CPU_Raytracer
+# CPU_Raytracer
 A raytracer that has all of its calculations performed on the CPU and its results are displayed to a PPM or a PNG file
 
-**# CPU_Raytracer
-
-A CPU-based raytracer that performs rendering calculations on the CPU and outputs images as either PPM or PNG files (user can choose the output format via API).
 
 ---
 
