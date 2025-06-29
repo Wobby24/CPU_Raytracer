@@ -39,7 +39,7 @@ The following techniques are planned or partially implemented to build a high-pe
 ### 1. Multithreading  
 Utilize all CPU cores efficiently with thread pools, work stealing, and load balancing.  
 - **Example CPU:** Intel i5-12600K (6 P-cores + 4 E-cores = 16 threads with Hyper-Threading)  
-- **Expected Gains:** 8–12× speedup over single-threaded execution (scene-dependent)
+- **Expected Gains:** depends on cpu thread count, but for most should introduce a significant speed-up
 
 ### 2. SIMD (AVX2 + FMA)  
 Process multiple rays or triangles simultaneously using wide SIMD registers:  
