@@ -87,9 +87,41 @@ Use Structure of Arrays (SOA), aligned memory, prefetching, and avoid indirectio
 
 ## Build Instructions
 
-CMake is supported, version 3.16 is required to build project, but ulitmatley I haven't run into any problems building it just quite yet.
-Build instructions will be updated soon, for now, CMake knowledge is assumed
+CMake is supported. Version 3.16 is required to build project, but ulitmatley I haven't run into any problems building it just quite yet.
+Build instructions:
 
+### Requirements
+
+- CMake >= 3.16
+- A C++ compiler (e.g., MSVC, GCC, Clang)
+- Git (optional, if cloning the repo)
+- Make/Ninja or a supported build system (e.g., Visual Studio)
+
+##Steps to Build
+
+1. Clone the repository:
+  ```bash
+  git clone https://github.com/Wobby24/CPU_Raytracer.git
+  cd CPU_Raytracer
+ ```
+2. Create a build directory and relocate to it
+  ```bash
+  mkdir build
+  cd build
+```
+3. Generate the build files
+   ```bash
+   cmake ..
+   ```
+3a. you can specifiy build system options if you want to build using a particular system, like ninja or visual studio by using -G
+  ```bash
+  cmake .. -G "Ninja" # OR "Visual Studio 17 2022" for Windows
+  ```
+4. Build the project
+  ```bash
+  cmake --build . #You can also use --config Release or --config Debug if using something like Visual Studio
+  ```
+The project should be able to run from there. The exectuable should be located in the bin folder, aswell as the output images being located in the "res" folder within the project source code
 ---
 
 ## Conclusion
