@@ -1,21 +1,46 @@
+# === C++ compiler outputs ===
 *.obj
 *.pdb
-*.idb
-*.ipch
-*.suo
-*.user
-*.VC.db
-*.VC.VC.opendb
-*.log
-*.tlog
 *.exe
 *.ilk
-*.cache
+*.log
+*.out
+
+# === CMake build directories ===
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# === Visual Studio Code ===
+.vscode/
+
+# === IDE & temp files ===
+*.user
+*.suo
 *.ncb
 *.sdf
 *.opensdf
-*.vcxproj.user
+*.ipch
+
+# === Old Visual Studio project leftovers ===
+*.vcxproj*
+*.tlog
+*.idb
+*.VC.db
+*.VC.VC.opendb
+
+# === Common output folders ===
 Debug/
 Release/
 x64/
-.vscode/
+
+# === Cache files ===
+*.cache
+
+# === Optional: Image output or raytrace result dumps ===
+*.ppm
+*.png
+*.jpg
+*.hdr
