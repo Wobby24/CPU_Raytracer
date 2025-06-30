@@ -45,7 +45,7 @@ Utilize all CPU cores efficiently with thread pools, work stealing, and load bal
 Process multiple rays or triangles simultaneously using wide SIMD registers:  
 - AVX2 (256-bit) for floats and ints  
 - FMA3 instructions for efficient fused multiply-add operations, heavily used in shading and geometry math
-- SSE 
+- SSE for older CPUs that don't support modern SIMD instructions like AVX (or SSE2 and later versions could be implemented for max compatiblity and performance)
 - **Expected Gains:** 2–4× per-core speedup over scalar code
 
 ### 3. Efficient Memory Layout  
