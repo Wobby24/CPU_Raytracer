@@ -88,7 +88,7 @@ Use Structure of Arrays (SOA), aligned memory, prefetching, and avoid indirectio
 ## Build Instructions
 
 CMake is supported, version 3.16 is required to build project, but ulitmatley I haven't run into any problems building it just quite yet.
-Build instructions will be updated soon, for now, CMake knowlege is assumed
+Build instructions will be updated soon, for now, CMake knowledge is assumed
 
 ---
 
