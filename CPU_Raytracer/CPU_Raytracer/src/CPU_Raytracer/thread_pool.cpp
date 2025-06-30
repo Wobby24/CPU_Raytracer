@@ -1,6 +1,6 @@
 #include <iostream>
 #include <thread>
-#include "CPU Raytracer/thread_pool.h"
+#include "CPU_Raytracer/thread_pool.h"
 
 ThreadPool::ThreadPool(size_t numThreads) : stop(false), unfinishedTasks(0) {
     for (size_t i = 0; i < numThreads; ++i) {
