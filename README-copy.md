@@ -41,10 +41,11 @@ Utilize all CPU cores efficiently with thread pools, work stealing, and load bal
 - **Example CPU:** Intel i5-12600K (6 P-cores + 4 E-cores = 16 threads with Hyper-Threading)  
 - **Expected Gains:** depends on cpu thread count, but for most should introduce a significant speed-up
 
-### 2. SIMD (AVX2 + FMA)  
+### 2. SIMD (AVX2 + FMA or older extensions like SSE)  
 Process multiple rays or triangles simultaneously using wide SIMD registers:  
 - AVX2 (256-bit) for floats and ints  
-- FMA3 instructions for efficient fused multiply-add operations, heavily used in shading and geometry math  
+- FMA3 instructions for efficient fused multiply-add operations, heavily used in shading and geometry math
+- SSE 
 - **Expected Gains:** 2–4× per-core speedup over scalar code
 
 ### 3. Efficient Memory Layout  
