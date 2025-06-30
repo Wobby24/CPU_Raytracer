@@ -5,7 +5,6 @@
 #include "material.h"
 #include <fstream> 
 #include <stbi_image/stb_image_write.h>
-#include "CPU Raytracer/thread_pool.h"
 #include <omp.h> //this will be for better performance, but later implement thread pools for more efficeny, and render to a framebuffer so that we can write
 //to both ppm and png at once
 
@@ -46,7 +45,7 @@ public:
             }
         }
 
-        // File write — single-threaded
+        // File write â€” single-threaded
         std::ofstream outFile(filename);
         if (!outFile) {
             std::cerr << "Failed to open file for writing: " << filename << std::endl;
