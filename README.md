@@ -1,5 +1,5 @@
 # CPU_Raytracer
-A raytracer that has all of its calculations performed on the CPU and its results are displayed to a PPM or a PNG file
+A raytracer, soon to be pathtracer that is able to calculate a raytraced scene then display it to a PPM or PNG file
 
 
 ---
