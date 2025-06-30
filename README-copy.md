@@ -39,14 +39,13 @@ The following techniques are planned or partially implemented to build a high-pe
 ### 1. Multithreading  
 Utilize all CPU cores efficiently with thread pools, work stealing, and load balancing.  
 - **Example CPU:** Intel i5-12600K (6 P-cores + 4 E-cores = 16 threads with Hyper-Threading)  
-- **Expected Gains:** depends on cpu thread count, but for most should introduce a significant speed-up
 
 ### 2. SIMD (AVX2 + FMA or older extensions like SSE)  
 Process multiple rays or triangles simultaneously using wide SIMD registers:  
 - AVX2 (256-bit) for floats and ints  
 - FMA3 instructions for efficient fused multiply-add operations, heavily used in shading and geometry math
 - SSE for older CPUs that don't support modern SIMD instructions like AVX (or SSE2 and later versions could be implemented for max compatiblity and performance)
-- **Expected Gains:** 2–4× per-core speedup over scalar code
+- Scalar mode will still be utlized for CPUs that don't support "modern" SIMD instructions
 
 ### 3. Efficient Memory Layout  
 Use Structure of Arrays (SOA), aligned memory, prefetching, and avoid indirection:  
