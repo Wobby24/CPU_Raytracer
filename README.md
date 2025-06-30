@@ -97,7 +97,7 @@ Build instructions:
 - Git (optional, if cloning the repo)
 - Make/Ninja or a supported build system (e.g., Visual Studio)
 
-##Steps to Build
+Steps to Build:
 
 1. Clone the repository:
   ```bash
@@ -108,7 +108,7 @@ Build instructions:
   ```bash
   mkdir build
   cd build
-```
+  ```
 3. Generate the build files
    ```bash
    cmake ..
