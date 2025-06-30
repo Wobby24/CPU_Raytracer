@@ -57,51 +57,45 @@ Use Structure of Arrays (SOA), aligned memory, prefetching, and avoid indirectio
     // ...
   };
 - BVH nodes and triangle data stored linearly and SIMD-ready  
-- **Expected Gains:** 1.5–3× over naive Array of Structures (AOS)
 
 - ### 4. Caching & Coherence  
 - Sort rays by direction before BVH traversal  
 - Use ray compaction after bounces  
 - Spatially coherent batching (e.g., rendering in camera tiles)  
 - Cache-align BVH nodes and triangle batches  
-- **Expected Gains:** 1.5–2.5× throughput improvements
 
 ### 5. BVH Design  
 - Use BVH8 (8 children per node) with SIMD traversal  
 - Compress Axis-Aligned Bounding Boxes (AABBs) and store them SIMD-ready  
-- **Expected Gains:** 1.5–2× over BVH2/BVH4 designs
 
 ### 6. Control Flow & Loop Efficiency  
 - Avoid shading rays that contribute no light (dead rays)  
 - Use Russian roulette and early termination to minimize unnecessary bounces  
 - Inline fast paths, minimize branching per ray  
-- **Expected Gains:** 1.2–1.5×
 
 ### 7. Shading Math Optimizations  
 - Use FMA for dot products, Lambertian, Fresnel calculations  
 - Normalize vectors with fast reciprocal square root approximations (similar to Quake’s famous trick)  
 - Avoid expensive trig functions where possible, use fast approximations  
-- **Expected Gains:** 1.2–1.5×, minor but important in inner loops
 
 ### 8. Additional Techniques (Optional and Scene Dependent)  
 - Batch texture fetches  
 - LRU caching for procedural materials  
 - SIMD-aware sampling methods (blue noise, improved hemisphere sampling)  
-- **Expected Gains:** Variable, roughly 5–20% in some cases
 
 ---
 
 ## Build Instructions
 
 Currently, this project can **only be built using Visual Studio 2022**.  
-- No CMake or Makefile setup yet.  
+- No CMake or Makefile fully setup yet.  
 - Future plans include adding cross-platform build support.
 
 ---
 
 ## Conclusion
 
-If development proceeds well, this project aims to evolve into a powerful, efficient CPU-based raytracer capable of handling complex scenes with advanced rendering techniques and hardware optimizations.
+If development proceeds well, this project aims to evolve into a powerful, efficient CPU-based path-tracer capable of handling complex scenes with advanced rendering techniques and hardware optimizations.
 
 ---
 
