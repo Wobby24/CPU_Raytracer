@@ -87,9 +87,8 @@ Use Structure of Arrays (SOA), aligned memory, prefetching, and avoid indirectio
 
 ## Build Instructions
 
-Currently, this project can **only be built using Visual Studio 2022**.  
-- No CMake or Makefile fully setup yet.  
-- Future plans include adding cross-platform build support.
+CMake is supported, version 3.16 is required to build project, but ulitmatley I haven't run into any problems building it just quite yet.
+Build instructions will be updated soon, for now, CMake knowlege is assumed
 
 ---
 
