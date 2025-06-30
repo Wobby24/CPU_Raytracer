@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\interval.h.obj",
+            "outputs": [
+                "C:\\Users\\Sam\\Downloads\\Visual Studio Projects\\Ray-Tracing\\CPU Raytracer\\CPU Raytracer\\CPU Raytracer\\x64\\Debug\\vc143.pdb",
+                "x64\\Debug\\",
+                "C:\\Users\\Sam\\Downloads\\Visual Studio Projects\\Ray-Tracing\\CPU Raytracer\\CPU Raytracer\\CPU Raytracer\\x64\\Debug\\interval.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "external\\include\\CPU Raytracer\\util\\interval.h",
+                    "source-path": "c:\\users\\sam\\downloads\\visual studio projects\\ray-tracing\\cpu raytracer\\cpu raytracer\\cpu raytracer\\external\\include\\cpu raytracer\\util\\interval.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

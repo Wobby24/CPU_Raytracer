@@ -1,0 +1,10 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\sam\\downloads\\visual studio projects\\ray-tracing\\cpu raytracer\\cpu raytracer\\cpu raytracer\\external\\include\\cpu raytracer\\util\\interval.h.h",
+        "ProvidedModule": "",
+        "Includes": [],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

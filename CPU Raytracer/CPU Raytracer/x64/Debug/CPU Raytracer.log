@@ -1,0 +1,9 @@
+﻿  CPU_Raytracer.cpp
+  stbi_write.cpp
+  thread_pool.cpp
+  main.cpp
+  Generating Code...
+C:\Users\Sam\Downloads\Visual Studio Projects\Ray-Tracing\CPU Raytracer\CPU Raytracer\CPU Raytracer\include\CPU Raytracer\util\interval.h(35,1): warning C4715: 'interval::clamp': not all control paths return a value
+  CPU Raytracer.vcxproj -> C:\Users\Sam\Downloads\Visual Studio Projects\Ray-Tracing\CPU Raytracer\CPU Raytracer\x64\Debug\CPU Raytracer.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
