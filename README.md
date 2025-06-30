@@ -93,7 +93,7 @@ Build instructions:
 ### Requirements
 
 - CMake >= 3.16
-- A C++ compiler (e.g., MSVC, GCC, Clang)
+- A C++ compiler (e.g., MSVC, GCC, Clang) WITH C++20 support
 - Git (optional, if cloning the repo)
 - Make/Ninja or a supported build system (e.g., Visual Studio)
 
