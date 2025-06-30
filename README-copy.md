@@ -27,7 +27,7 @@ A raytracer that has all of its calculations performed on the CPU and its result
 - Support for triangle-based rendering instead of per-pixel calculation (enables more complex geometry)  
 - Mesh loading via [tinygltf](https://github.com/syoyo/tinygltf)  
 - Physically Based Rendering (PBR) support  
-- Normal and bump mapping support, alongside specular maps (specular maps are useful in path tracers to model surface reflectivity)  
+- Normal mapping, bump mapping, roughness, AO (ambient occulsion mapping) metallic mapping etc.
 - SIMD batched ray tracing for improved performance, with runtime checks for instruction set support to maximize compatibility  
 
 ---
