@@ -14,6 +14,10 @@ A raytracer, soon to be pathtracer that is able to calculate a raytraced scene t
 
 ---
 
+## API
+
+- Unfortunatley, because the raytracer is still in development, no usuable API is currently provided. Better methods will be implemented later, and a more friendly interface will too. The project also isn't able to execute well with basic errors like file path problems. I'm currently investigating issues with this.
+
 ## Planned Features / To-Do
 
 - Improved and more efficient BVH implementation  
