@@ -4,8 +4,8 @@
 int main() {
 	CPURaytracer raytracer;
 
-	raytracer.Render("res/image.ppm");
-//	raytracer.Render("res/image.png");
+	raytracer.Render("../CPU_Raytracer/res/image.ppm");
+	raytracer.Render("../CPU_Raytracer/res/image.png");
 
 	return 0;
 }
