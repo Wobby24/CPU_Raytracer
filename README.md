@@ -10,7 +10,9 @@ A raytracer, soon to be pathtracer that is able to calculate a raytraced scene t
 - Adjustable image parameters, camera position, and relevant settings  
 - Motion blur support  
 - Basic material support  
-- Sphere rendering  
+- Sphere rendering
+- Basic texture loading
+- Built-in scenes to render
 
 ---
 
