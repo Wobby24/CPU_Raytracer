@@ -42,4 +42,3 @@ target_compile_definitions(${PROJECT_NAME}
 #add_library(${PROJECT_NAME} STATIC ${SOURCES}) --- makes a static library (.lib, .a)
 #add_library(${PROJECT_NAME} SHARED ${SOURCES}) --- makes a shared library (.dll, .so, .dylib)
 
-
