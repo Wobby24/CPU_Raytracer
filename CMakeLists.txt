@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(CPU_Raytracer VERSION 1.0 LANGUAGES CXX)
+project(CPURaytracer VERSION 1.0 LANGUAGES CXX)
 
 # C++ standard
 set(CMAKE_CXX_STANDARD 20)
@@ -14,16 +14,11 @@ endif()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Source files
-set(SRC_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer/src)
-set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer/external/include)
-set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer/include)
+set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
+set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/include)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     ${SRC_DIR}/*.cpp
-)
-
-set_target_properties(${PROJECT_NAME} PROPERTIES
-    VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer"
 )
 
 # Executable
@@ -33,7 +28,6 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME}
     PRIVATE
         ${EXTERNAL_INCLUDE_DIR}       # Adds external/include (recursive)
-        ${INCLUDE_DIR}                # Adds include for our api code (recursive)
 )
 
 # Debug macro
@@ -42,16 +36,10 @@ target_compile_definitions(${PROJECT_NAME}
         $<$<CONFIG:Debug>:DEBUG_BUILD>
 )
 
-if (MSVC)
-    target_compile_options(${PROJECT_NAME} PRIVATE /W4 /permissive-)
-else()
-    target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
-endif()
-
-
 #BTW this script should work with CMake 3.16 and later versions.
 
 #to compile to a lib, you can use the following command(s): 
 #add_library(${PROJECT_NAME} STATIC ${SOURCES}) --- makes a static library (.lib, .a)
 #add_library(${PROJECT_NAME} SHARED ${SOURCES}) --- makes a shared library (.dll, .so, .dylib)
+
 
