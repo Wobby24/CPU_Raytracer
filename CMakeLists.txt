@@ -22,6 +22,10 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     ${SRC_DIR}/*.cpp
 )
 
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer"
+)
+
 # Executable
 add_executable(${PROJECT_NAME} ${SOURCES})
 
