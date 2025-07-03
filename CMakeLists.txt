@@ -14,9 +14,9 @@ endif()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Project directories
-set(SRC_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/src)
-set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/include)
-set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/external/include)
+set(SRC_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer/src)
+set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer/include)
+set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer/external/include)
 
 # Gather source and header files
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
