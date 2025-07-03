@@ -14,18 +14,24 @@ endif()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Project directories (based on current repo layout)
-set(SRC_DIR ${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/src)
-set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/include)
-set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/external/include)
+set(SRC_DIR "${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/src")
+set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/include")
+set(EXTERNAL_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/external/include")
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    "${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/res"
+    "$<TARGET_FILE_DIR:${PROJECT_NAME}>/res"
+)
 
 
 # List Source files
 set(PROJECT_SOURCES
-    ${SRC_DIR}/main.cpp
-    ${SRC_DIR}/CPU Raytracer/CPU_Raytracer.cpp
-    ${SRC_DIR}/CPU Raytracer/stb_image_impl.cpp
-    ${SRC_DIR}/CPU Raytracer/stb_image_write_impl.cpp  
-    ${SRC_DIR}/CPU Raytracer/thread_pool.cpp
+    "${SRC_DIR}/main.cpp"
+    "${SRC_DIR}/CPU Raytracer/CPU_Raytracer.cpp"
+    "${SRC_DIR}/CPU Raytracer/stb_image_impl.cpp"
+    "${SRC_DIR}/CPU Raytracer/stb_image_write_impl.cpp"
+    "${SRC_DIR}/CPU Raytracer/thread_pool.cpp"
 )
 
 # Debug print
@@ -41,8 +47,8 @@ add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 # Includes
 target_include_directories(${PROJECT_NAME}
     PRIVATE
-        ${INCLUDE_DIR}
-        ${EXTERNAL_INCLUDE_DIR}
+        "${INCLUDE_DIR}"
+        "${EXTERNAL_INCLUDE_DIR}"
 )
 
 # Debug macro
