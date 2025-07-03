@@ -36,7 +36,7 @@ foreach(src ${SOURCES})
 endforeach()
 
 # Executable
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 
 # Includes
 target_include_directories(${PROJECT_NAME}
