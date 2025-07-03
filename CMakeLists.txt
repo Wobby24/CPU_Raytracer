@@ -13,28 +13,36 @@ endif()
 # Output binary location
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-# Project directories
-set(SRC_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer/src)
-set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer/include)
-set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/CPU_Raytracer/external/include)
+# Project directories (based on current repo layout)
+set(SRC_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/src)
+set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/include)
+set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/external/include)
 
-# Gather source and header files
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
-    ${SRC_DIR}/*.cpp
-)
-file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS
-    ${INCLUDE_DIR}/*.h
-    ${INCLUDE_DIR}/*.hpp
+
+# List Source files
+set(PROJECT_SOURCES
+    ${SRC_DIR}/main.cpp
+    ${SRC_DIR}/CPU_Raytracer/CPU_Raytracer.cpp
+    ${SRC_DIR}/CPU_Raytracer/stb_image_impl.cpp
+    ${SRC_DIR}/CPU_Raytracer/stb_image_write_impl.cpp  
+    ${SRC_DIR}/CPU_Raytracer/thread_pool.cpp
 )
 
-# Executable target
+# Debug print
+message(STATUS "SRC_DIR = ${SRC_DIR}")
+message(STATUS "Found sources:")
+foreach(src ${SOURCES})
+    message(STATUS " - ${src}")
+endforeach()
+
+# Executable
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-# Include directories
+# Includes
 target_include_directories(${PROJECT_NAME}
     PRIVATE
-        ${INCLUDE_DIR}            # Your own headers
-        ${EXTERNAL_INCLUDE_DIR}   # External libs headers
+        ${INCLUDE_DIR}
+        ${EXTERNAL_INCLUDE_DIR}
 )
 
 # Debug macro
