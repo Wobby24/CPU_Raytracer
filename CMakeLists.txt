@@ -15,6 +15,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Source files
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
+set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/include)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
@@ -29,16 +30,14 @@ file(GLOB SOURCES CONFIGURE_DEPENDS
 # Include directories
 target_include_directories(${PROJECT_NAME}
     PRIVATE
-        ${EXTERNAL_INCLUDE_DIR}       # Adds external/include (recursive)
+        ${INCLUDE_DIR}            # Your own headers
+        ${EXTERNAL_INCLUDE_DIR}   # External libs headers
 )
-
 # Debug macro
 target_compile_definitions(${PROJECT_NAME}
     PRIVATE
         $<$<CONFIG:Debug>:DEBUG_BUILD>
 )
-
-#BTW this script should work with CMake 3.16 and later versions.
 
 #to compile to a lib, you can use the following command(s): 
 #add_library(${PROJECT_NAME} STATIC ${SOURCES}) --- makes a static library (.lib, .a)
