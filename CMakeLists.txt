@@ -14,18 +14,18 @@ endif()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Project directories (based on current repo layout)
-set(SRC_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/src)
-set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/include)
-set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU_Raytracer/external/include)
+set(SRC_DIR ${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/src)
+set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/include)
+set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/external/include)
 
 
 # List Source files
 set(PROJECT_SOURCES
     ${SRC_DIR}/main.cpp
-    ${SRC_DIR}/CPU_Raytracer/CPU_Raytracer.cpp
-    ${SRC_DIR}/CPU_Raytracer/stb_image_impl.cpp
-    ${SRC_DIR}/CPU_Raytracer/stb_image_write_impl.cpp  
-    ${SRC_DIR}/CPU_Raytracer/thread_pool.cpp
+    ${SRC_DIR}/CPU Raytracer/CPU_Raytracer.cpp
+    ${SRC_DIR}/CPU Raytracer/stb_image_impl.cpp
+    ${SRC_DIR}/CPU Raytracer/stb_image_write_impl.cpp  
+    ${SRC_DIR}/CPU Raytracer/thread_pool.cpp
 )
 
 # Debug print
