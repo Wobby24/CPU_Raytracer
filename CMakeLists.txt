@@ -13,18 +13,22 @@ endif()
 # Output binary location
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-# Source files
+# Project directories
 set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/include)
 
-# Recursively find all .cpp files in src/
+# Gather source and header files
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     ${SRC_DIR}/*.cpp
 )
+file(GLOB_RECURSE HEADERS CONFIGURE_DEPENDS
+    ${INCLUDE_DIR}/*.h
+    ${INCLUDE_DIR}/*.hpp
+)
 
-# Executable
-add_executable(${PROJECT_NAME} ${SOURCES})
+# Executable target
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 # Include directories
 target_include_directories(${PROJECT_NAME}
