@@ -22,7 +22,9 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
 )
 
 # Executable
-add_executable(${PROJECT_NAME} ${SOURCES})
+file(GLOB SOURCES CONFIGURE_DEPENDS
+    "${PROJECT_SOURCE_DIR}/src/*.cpp"
+)
 
 # Include directories
 target_include_directories(${PROJECT_NAME}
