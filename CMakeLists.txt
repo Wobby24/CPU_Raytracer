@@ -18,13 +18,6 @@ set(SRC_DIR "${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/src")
 set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/include")
 set(EXTERNAL_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/external/include")
 
-add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory
-    "${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/res"
-    "$<TARGET_FILE_DIR:${PROJECT_NAME}>/res"
-)
-
-
 # List Source files
 set(PROJECT_SOURCES
     "${SRC_DIR}/main.cpp"
@@ -43,6 +36,13 @@ endforeach()
 
 # Executable
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
+
+# Post-build copy: only valid after the target exists
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+    "${CMAKE_SOURCE_DIR}/CPU Raytracer/CPU Raytracer/res"
+    "$<TARGET_FILE_DIR:${PROJECT_NAME}>/res"
+)
 
 # Includes
 target_include_directories(${PROJECT_NAME}
