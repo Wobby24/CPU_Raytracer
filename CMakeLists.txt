@@ -18,14 +18,13 @@ set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 set(EXTERNAL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/external/include)
 
+# Recursively find all .cpp files in src/
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     ${SRC_DIR}/*.cpp
 )
 
 # Executable
-file(GLOB SOURCES CONFIGURE_DEPENDS
-    "${PROJECT_SOURCE_DIR}/src/*.cpp"
-)
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Include directories
 target_include_directories(${PROJECT_NAME}
@@ -33,13 +32,9 @@ target_include_directories(${PROJECT_NAME}
         ${INCLUDE_DIR}            # Your own headers
         ${EXTERNAL_INCLUDE_DIR}   # External libs headers
 )
+
 # Debug macro
 target_compile_definitions(${PROJECT_NAME}
     PRIVATE
         $<$<CONFIG:Debug>:DEBUG_BUILD>
 )
-
-#to compile to a lib, you can use the following command(s): 
-#add_library(${PROJECT_NAME} STATIC ${SOURCES}) --- makes a static library (.lib, .a)
-#add_library(${PROJECT_NAME} SHARED ${SOURCES}) --- makes a shared library (.dll, .so, .dylib)
-
