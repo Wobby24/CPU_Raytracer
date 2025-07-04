@@ -2,32 +2,33 @@
 #include <string>
 #include <CPU_Raytracer/CPU_Raytracer.h>
 
-//int main(int argc, char* argv[]) {
-int main() {
- //   if (argc < 2) {
-   //     std::cout << "Usage: raytracer <scene_name>\n";
-   //     return 1;
-  //  }
+int main(int argc, char* argv[]) {
+    SceneType scene = SceneType::Earth; // Default scene
 
-   // std::string sceneName = argv[1];
+    if (argc >= 2) {
+        try {
+            int sceneIndex = std::stoi(argv[1]);
+
+            // Map the integer index to your SceneType enum
+            switch (sceneIndex) {
+                case 0: scene = SceneType::CheckeredSpheres; break;
+                case 1: scene = SceneType::BouncingSpheres; break;
+                case 2: scene = SceneType::Earth; break;
+                // Add more scenes here as needed
+                default:
+                    std::cerr << "Invalid scene index. Using default (Earth).\n";
+                    break;
+            }
+        } catch (const std::exception& e) {
+            std::cerr << "Invalid input. Please enter an integer scene index.\n";
+            return 1;
+        }
+    } else {
+        std::cout << "No scene index provided. Using default (Earth).\n";
+    }
+
     CPURaytracer raytracer;
-
-    // Map from string to SceneType enum
-  //  SceneType sceneEnum;
-  //  if (sceneName == "CheckeredSpheres") {
-   //     sceneEnum = SceneType::CheckeredSpheres;
-  //  }
-  //  else if (sceneName == "BouncingSpheres") {
-  //      sceneEnum = SceneType::BouncingSpheres;
- //   }
-  //  else {
-   //     std::cerr << "Unknown scene: " << sceneName << std::endl;
-   //     return 1;
-  //  }
-	SceneType scene = SceneType::Earth; // Default scene
     raytracer.setCurrentScene(scene);
-
-  //  raytracer.Render("res/image.ppm");
     raytracer.Render("res/output/image.png");
 
     return 0;
