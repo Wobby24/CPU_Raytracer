@@ -13,6 +13,9 @@ A raytracer (techinically path-tracer) that is able to calculate a raytraced sce
 - Sphere rendering
 - Basic texture loading
 - Built-in scenes to render
+- Scene parameter can be set when running executable from terminal (0 to 2, 0 = checkered spheres, 1 = bouncing spheres, 2 = earth (default scene)
+
+  
 
 ---
 
