@@ -29,7 +29,9 @@ int main(int argc, char* argv[]) {
 
     CPURaytracer raytracer;
     raytracer.setCurrentScene(scene);
-    raytracer.Render("res/output/image.png");
+    
+    if (scene != SceneType::Earth) 
+        raytracer.Render("res/output/image.png");
 
     return 0;
 }
