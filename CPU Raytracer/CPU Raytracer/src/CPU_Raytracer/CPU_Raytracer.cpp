@@ -139,16 +139,20 @@ void CPURaytracer::bouncing_spheres(hittable_list& world) {
 	world = hittable_list(make_shared<bvh_node>(world));
 }
 
-void CPURaytracer::earth() {
+void CPURaytracer::earth(hittable_list& world) {
+	//clear world
+	world.clear();
+	//
 	auto earth_texture = make_shared<image_texture>("res/images/earthmap.jpg");
 	auto earth_surface = make_shared<lambertian>(earth_texture);
 	auto globe = make_shared<sphere>(point3(0, 0, 0), 2, earth_surface);
 
+	//add the globe
+	world.add(globe);
+
 	cam.lookfrom = point3(0, 0, 12);
 
 	cam.defocus_angle = 0;
-
-	cam.RenderToPNG(hittable_list(globe), "res/images/earth.png");
 }
 
 //no longer needed, but kept for reference. its just the boucning spheres scene setup but in a seperate function
