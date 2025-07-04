@@ -20,7 +20,7 @@ void CPURaytracer::Render(const char* filename) {
 	switch (currentScene) {
 		case SceneType::CheckeredSpheres: checkered_spheres(worlds[0]); break;
 		case SceneType::BouncingSpheres: bouncing_spheres(worlds[0]); break;
-	    case SceneType::Earth: earth(); break;
+	        case SceneType::Earth: earth(worlds[0]); break;
 	}
 	//if you wanted to render multiple worlds, you could loop through the worlds vector here
 	if (worlds.empty()) {
