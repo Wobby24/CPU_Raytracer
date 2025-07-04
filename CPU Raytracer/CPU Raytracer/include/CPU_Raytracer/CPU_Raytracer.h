@@ -39,7 +39,7 @@ private:
 	void cameraInit();
 //	void setupWorld(hittable_list& world); //no longer needed, as worlds are now managed by scene type and that calls a function to set up the world
 	void bouncing_spheres(hittable_list& world);
-	void checkered_spheres(hittable_list& world)
+	void checkered_spheres(hittable_list& world);
 	void earth(hittable_list& world);
 
 	camera cam;
