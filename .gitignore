@@ -23,6 +23,7 @@ Makefile
 *.sdf
 *.opensdf
 *.ipch
+*.vsidx
 
 # === Old Visual Studio project leftovers ===
 *.vcxproj*
@@ -40,7 +41,7 @@ x64/
 *.cache
 
 # === Optional: Image output or raytrace result dumps ===
-*.ppm
-*.png
-*.jpg
-*.hdr
+# *.ppm
+# *.png
+# *.jpg
+# *.hdr
