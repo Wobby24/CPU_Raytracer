@@ -24,6 +24,7 @@ Makefile
 *.opensdf
 *.ipch
 *.vsidx
+.vs/
 
 # === Old Visual Studio project leftovers ===
 *.vcxproj*
